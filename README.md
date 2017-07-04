@@ -11,4 +11,4 @@ Extensive browser support
 
 No Dependencies
 
-You will start with basic knockout introduction before getting started on important concepts such as View Models, Observables ,Data binding and Templating. The following are the main concpets covered in the course
+You will start with basic knockout introduction before getting started on important concepts such as View Models, Observables ,Data binding and Templating.

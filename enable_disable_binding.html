@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example: Enable Binding</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+</head>
+<body>
+<p>
+    <input type="checkbox" data-bind="checked: isCompany">Register Under a Company
+</p>
+<p>
+    Your name:
+    <input type="text" data-bind="value: name ,disable: isCompany">
+</p>
+<p>
+    Company name:
+    <input type="text" data-bind="value: companyName,enable:isCompany">
+</p>
+<script>
+    var viewModel = {
+        isCompany: ko.observable(false),
+        companyName: ""
+
+    };
+    console.log(viewModel.isCompany);
+    ko.applyBindings(viewModel);
+</script>
+
+</body>
+</html>

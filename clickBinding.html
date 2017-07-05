@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example: Click Binding</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+</head>
+<body>
+
+<ul data-bind="foreach: users">
+    <li>
+        <span data-bind="text: $data"> </span>
+        <button data-bind="click: $parent.removeUser">Remove</button>
+    </li>
+</ul>
+
+<script>
+    function viewModel() {
+        var self = this;
+        self.users = ko.observableArray(['John', 'Lance', 'Dan']);
+
+        self.removeUser = function (user) {
+            self.users.remove(user);
+        }
+    }
+
+    ko.applyBindings(new viewModel());
+</script>
+
+</body>
+</html>
